@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -46,19 +44,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} scroll-smooth`}>
       <body className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased selection:bg-rose-500 selection:text-white">
-        
-        {/* Navbar */}
-        <Navbar />
-
-        {/* Page Content */}
-        <main className="flex-grow">
-          {children}
-        </main>
-
-        {/* Footer */}
-        <Footer />
-        
+        {children}
       </body>
     </html>
   );
 }
+
