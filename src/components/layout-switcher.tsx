@@ -34,16 +34,16 @@ export default function LayoutSwitcher() {
       <Link
         href={targetPath}
         className={cn(
-          "flex items-center gap-2.5 rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-wider shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-95 border",
+          "flex items-center gap-2.5 rounded-full px-5 py-3 text-xs font-extrabold uppercase tracking-wider shadow-xl transition-all duration-300 hover:scale-[1.03] active:scale-95 border",
           isLayoutB
-            ? "bg-slate-900 border-slate-800 text-slate-200 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-400 shadow-cyan-500/20"
+            ? "bg-blue-950 border-blue-900 text-white hover:bg-sky-600 hover:border-sky-500 shadow-blue-900/10"
             : "bg-white border-slate-200 text-slate-900 hover:bg-slate-950 hover:text-white hover:border-slate-950 shadow-slate-950/15"
         )}
       >
-        <Layers className={cn("h-4 w-4", isLayoutB ? "text-cyan-400 hover:text-slate-950" : "text-rose-600")} />
+        <Layers className={cn("h-4 w-4", isLayoutB ? "text-sky-400" : "text-rose-600")} />
         
         <span>
-          {isLayoutB ? "Layout A (Claro)" : "Layout B (Escuro)"}
+          {isLayoutB ? "Layout A (Original)" : "Layout B (Soft Blue)"}
         </span>
 
         <ArrowRightLeft className="h-3 w-3 opacity-60" />

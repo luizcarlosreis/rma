@@ -18,28 +18,28 @@ export default function NavbarB() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/80 backdrop-blur-md transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
           
           {/* Logo Section */}
           <Link href="/layout-b" className="flex items-center gap-3 transition-opacity hover:opacity-90">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-slate-900 p-1 shadow-inner border border-slate-800">
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 p-1 shadow-sm border border-slate-100">
               <Image
                 src="/logo.png"
                 alt="Logo RMA Solutions"
                 width={44}
                 height={44}
                 priority
-                className="object-contain filter brightness-110"
+                className="object-contain"
               />
             </div>
             <div className="flex flex-col">
               <div className="flex items-baseline gap-1">
-                <span className="text-xl font-extrabold tracking-tight text-white">RMA</span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400">Solutions</span>
+                <span className="text-xl font-extrabold tracking-tight text-slate-900">RMA</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">Solutions</span>
               </div>
-              <span className="hidden text-[10px] font-medium leading-none text-slate-400 sm:block">
+              <span className="hidden text-[10px] font-medium leading-none text-slate-500 sm:block">
                 Assessoria Contábil & Trabalhista
               </span>
             </div>
@@ -54,10 +54,10 @@ export default function NavbarB() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-cyan-400 relative py-1",
+                    "text-sm font-medium transition-colors hover:text-blue-600 relative py-1",
                     isActive 
-                      ? "text-white font-semibold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-cyan-400 after:rounded-full" 
-                      : "text-slate-300"
+                      ? "text-blue-900 font-semibold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-600 after:rounded-full" 
+                      : "text-slate-650 text-slate-600"
                   )}
                 >
                   {item.name}
@@ -70,24 +70,24 @@ export default function NavbarB() {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/layout-b/cliente"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 border border-slate-800 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-cyan-500 hover:text-slate-950 hover:border-cyan-400 hover:scale-[1.02]"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-blue-950 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-sky-600 hover:shadow-sky-100 hover:scale-[1.02]"
               aria-label="Acessar Área do Cliente"
             >
-              <Lock className="h-4 w-4 text-cyan-400 transition-colors group-hover:text-slate-950" />
+              <Lock className="h-4 w-4 text-sky-400 transition-colors group-hover:text-white" />
               <span>Área do Cliente</span>
             </Link>
           </div>
 
-          {/* Mobile Layout Actions (Immediate CTA access for mobile + hamburger) */}
+          {/* Mobile Layout Actions */}
           <div className="flex items-center gap-2 md:hidden">
             {/* Small Quick-CTA for Mobile */}
             <Link
               href="/layout-b/cliente"
-              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-slate-900 border border-slate-800 p-2 text-white transition-all hover:bg-cyan-500 hover:text-slate-950"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-blue-950 p-2 text-white transition-all hover:bg-sky-600"
               title="Área do Cliente"
               aria-label="Acessar Área do Cliente"
             >
-              <Lock className="h-4 w-4 text-cyan-400" />
+              <Lock className="h-4 w-4 text-sky-400" />
               <span className="text-xs font-bold pr-1">Área do Cliente</span>
             </Link>
 
@@ -95,7 +95,7 @@ export default function NavbarB() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-lg p-2 text-slate-300 hover:bg-slate-900 hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-lg p-2 text-slate-650 hover:bg-slate-100 hover:text-slate-900 focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -110,7 +110,7 @@ export default function NavbarB() {
       {/* Mobile Menu Panel */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-slate-800 bg-slate-950",
+          "md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-slate-200/50 bg-white",
           isOpen ? "max-h-72 opacity-100 visible" : "max-h-0 opacity-0 invisible"
         )}
         id="mobile-menu"
@@ -126,8 +126,8 @@ export default function NavbarB() {
                 className={cn(
                   "block rounded-lg px-3 py-2.5 text-base font-medium transition-colors",
                   isActive
-                    ? "bg-slate-900 text-cyan-400 font-semibold"
-                    : "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
+                    ? "bg-slate-50 text-blue-600 font-semibold"
+                    : "text-slate-650 hover:bg-slate-50 hover:text-blue-600"
                 )}
               >
                 {item.name}
@@ -140,9 +140,9 @@ export default function NavbarB() {
             <Link
               href="/layout-b/cliente"
               onClick={() => setIsOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 border border-slate-800 py-3 text-center text-sm font-bold text-white transition-all hover:bg-cyan-500 hover:text-slate-950"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-950 py-3 text-center text-sm font-bold text-white transition-all hover:bg-sky-600"
             >
-              <Lock className="h-4 w-4 text-cyan-400" />
+              <Lock className="h-4 w-4 text-sky-455 text-sky-400" />
               <span>Área do Cliente</span>
             </Link>
           </div>
