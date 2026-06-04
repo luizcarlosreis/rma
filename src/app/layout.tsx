@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "@/components/whatsapp-button";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     siteName: "RMA Solutions",
     locale: "pt_BR",
     type: "website",
+    // images: ["/og-image.png"]
   },
   robots: {
     index: true,
@@ -45,6 +47,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${inter.variable} scroll-smooth`}>
       <body className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased selection:bg-rose-500 selection:text-white">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
