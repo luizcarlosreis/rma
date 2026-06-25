@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import logoImg from "../../public/logo.png";
 import { Menu, X, Lock, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +27,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-90">
             <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-slate-50 p-1 shadow-sm border border-slate-100">
               <Image
-                src="/logo.png"
+                src={logoImg}
                 alt="Logo RMA Solutions"
                 width={44}
                 height={44}

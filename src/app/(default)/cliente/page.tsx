@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import logoImg from "../../../../public/logo.png";
+
 import { Lock, ShieldAlert, ArrowRight, UserCheck, HelpCircle, Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -97,7 +99,7 @@ export default function ClientePage() {
             {/* Header Brand */}
             <div className="flex items-center gap-3 mb-8">
               <Image
-                src="/logo.png"
+                src={logoImg}
                 alt="RMA Logo"
                 width={36}
                 height={36}

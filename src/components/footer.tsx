@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import logoImg from "../../public/logo.png";
 import { Phone, MapPin, Mail, ChevronRight } from "lucide-react";
 
 export default function Footer() {
@@ -18,13 +19,13 @@ export default function Footer() {
           {/* Brand Column (5 columns) */}
           <div className="md:col-span-5 flex flex-col space-y-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 p-1 shadow-inner backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1 shadow-sm border border-slate-800">
                 <Image
-                  src="/logo.png"
+                  src={logoImg}
                   alt="RMA Solutions Logo"
                   width={36}
                   height={36}
-                  className="brightness-0 invert object-contain"
+                  className="object-contain"
                 />
               </div>
               <span className="text-lg font-extrabold tracking-tight text-white">
